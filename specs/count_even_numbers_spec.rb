@@ -1,5 +1,6 @@
 require_relative '../test_framework.rb'
 require_relative '../lib/count_even_numbers.rb'
+require 'colorize'
 
 # Acceptance Criteria
 # acceptance_criteria = [[[1,2,3,4,5,6], 3],
@@ -23,7 +24,11 @@ it 'counts number of evens in [1,2,3,4,5,6]: ' do
   expected = 3
 
   # Verify
-  puts assert_equals(actual, expected)
+  if assert_equals(actual, expected)
+    puts "correct".green
+  else
+    puts "expected: #{expected}\nbut got: #{actual}".red
+  end
 end
 
 it 'counts number of evens in [1,3,5]: ' do
@@ -32,7 +37,11 @@ it 'counts number of evens in [1,3,5]: ' do
   expected = 0
 
   # Verify
-  puts assert_equals(actual, expected)
+  if assert_equals(actual, expected)
+    puts "correct".green
+  else
+    puts "expected: #{expected}\nbut got: #{actual}".red
+  end
 end
 
 it 'counts number of evens in [0,1,2]: ' do
@@ -41,5 +50,9 @@ it 'counts number of evens in [0,1,2]: ' do
   expected = 2
 
   # Verify
-  puts assert_equals(actual, expected)
+  if assert_equals(actual, expected)
+    puts "correct".green
+  else
+    puts "expected: #{expected}\nbut got: #{actual}".red
+  end
 end
