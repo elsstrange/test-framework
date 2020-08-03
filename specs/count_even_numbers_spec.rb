@@ -1,4 +1,4 @@
-require '../test_framework.rb'
+require './test_framework.rb'
 
 # Acceptance Criteria
 acceptance_criteria = [[[1,2,3,4,5,6], 3],
